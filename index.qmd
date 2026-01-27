@@ -1,0 +1,31 @@
+---
+title: "Aster Accuracy Metrics"
+---
+
+# Accuracy
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+library(yardstick)
+library(gt)
+acc_df <- vroom::vroom(here::here("data/accuracy.csv"))
+
+multi_metric <- yardstick::metric_set(rsq, ccc, mae, rmse)
+mm_df <- multi_metric(acc_df, truth = truth, estimate = predicted)
+tibble::tibble(
+    Metric = c("R squared", "Concordance correlation coefficient","Mean absolute error","Root mean squared error"),
+    Estimate = mm_df$.estimate |> round(digits = 2)
+) |> 
+    gt::gt() |> 
+    tab_header(
+    title = md("**Accuracy metrics**"),
+    subtitle = md("Aster bee detection")
+  ) |> 
+    tab_options(
+        table_body.border.top.style = "none",
+        row.striping.background_color = "white"
+    )
+
+```

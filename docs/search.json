@@ -1,0 +1,16 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Aster Accuracy Metrics",
+    "section": "",
+    "text": "Accuracy\n\n\n\n\n\n\n\n\n\nAccuracy metrics\n\n\nAster bee detection\n\n\nMetric\nEstimate\n\n\n\n\nR squared\n0.99\n\n\nConcordance correlation coefficient\n0.96\n\n\nMean absolute error\n51.33\n\n\nRoot mean squared error\n62.47"
+  }
+]
