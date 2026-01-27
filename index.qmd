@@ -4,8 +4,8 @@ title: "Aster Accuracy Metrics"
 
 # Aster Computer vision model
 
-Throughout the ASTER project, we will be training computer vision models that run on mobile devices to assist beekeepers in taking care of their colonies. The first model in our list of features we will be providing in this app will be the ability to count the number of bees on each frame of a colony and produce an accurate estimate of the number of individuals.  
-We are committed to being transparent around the accuracy and performance of our models throughout this process. This page will display these performance metrics for every iteration of these models. Additionally, we will provide an open verification dataset so that other's can independently check our results and benchmark them against any future models.  
+Throughout the ASTER project, we will be training computer vision models that run on mobile devices to assist beekeepers in taking care of their colonies. The first model in our list of features will be the ability to count the number of bees on each frame of a colony and produce an accurate estimate of the number of individuals.  
+We are committed to being transparent around the accuracy and performance of our models throughout this process. This page will display these performance metrics for every iteration of these models. Additionally, we will provide an open verification dataset so that others can independently check our results and benchmark them against any future models.  
 
 Below, is an example image from the verification dataset and a prediction of detected individuals. Brighter locations signify higher predicted confidence.
 
@@ -31,7 +31,7 @@ multi_metric <- yardstick::metric_set(rsq, ccc, mae, rmse)
 mm_df <- multi_metric(acc_df, truth = truth, estimate = predicted)
 perc_rmse <- ehaGoF::gofRRMSE(acc_df$truth, acc_df$predicted, 2)
 tibble::tibble(
-    Metric = c("R squared", "Concordance correlation coefficient","Mean absolute error","Root mean squared error", "Relative Root mean squared error (%)"),
+    Metric = c("R squared", "Concordance correlation coefficient", "Mean absolute error","Root mean squared error", "Relative Root mean squared error (%)"),
     Estimate = mm_df$.estimate |> round(digits = 2) |> append(perc_rmse)
 ) |> 
     gt::gt() |> 
@@ -39,6 +39,7 @@ tibble::tibble(
     title = md("**Accuracy metrics**"),
     subtitle = md("Aster bee detection")
   ) |> 
+    tab_caption("Performace metrics for the bee counting model based on the true number of individuals per image vs the estimated number of individuals per image") |> 
     tab_options(
         table_body.border.top.style = "none",
         row.striping.background_color = "white"
