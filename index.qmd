@@ -2,7 +2,22 @@
 title: "Aster Accuracy Metrics"
 ---
 
+# Aster Computer vision model
+
+Throughout the ASTER project, we will be training computer vision models that run on mobile devices to assist beekeepers in taking care of their colonies. The first model in our list of features we will be providing in this app will be the ability to count the number of bees on each frame of a colony and produce an accurate estimate of the number of individuals.  
+We are committed to being transparent around the accuracy and performance of our models throughout this process. This page will display these performance metrics for every iteration of these models. Additionally, we will provide an open verification dataset so that other's can independently check our results and benchmark them against any future models.  
+
+Below, is an example image from the verification dataset and a prediction of detected individuals. Brighter locations signify higher predicted confidence.
+
+::: {layout-ncol=2}
+![Actual count: 888](data/images/Aarhus.11-04-2025(11)_crop.png)
+
+![Detected count: 829](data/predictions/Aarhus.11-04-2025(11)_crop_829.webp)
+:::
+
 # Accuracy
+
+The following are performance metrics for the current Aster bee counting model. As we add features and improve the model, we will continue to update this page. 
 
 ```{r}
 #| echo: false
@@ -14,9 +29,10 @@ acc_df <- vroom::vroom(here::here("data/accuracy.csv"))
 
 multi_metric <- yardstick::metric_set(rsq, ccc, mae, rmse)
 mm_df <- multi_metric(acc_df, truth = truth, estimate = predicted)
+perc_rmse <- ehaGoF::gofRRMSE(acc_df$truth, acc_df$predicted, 2)
 tibble::tibble(
-    Metric = c("R squared", "Concordance correlation coefficient","Mean absolute error","Root mean squared error"),
-    Estimate = mm_df$.estimate |> round(digits = 2)
+    Metric = c("R squared", "Concordance correlation coefficient","Mean absolute error","Root mean squared error", "Relative Root mean squared error (%)"),
+    Estimate = mm_df$.estimate |> round(digits = 2) |> append(perc_rmse)
 ) |> 
     gt::gt() |> 
     tab_header(
@@ -29,3 +45,7 @@ tibble::tibble(
     )
 
 ```
+
+## Please note
+
+We would like to stress that these results are very preliminary and are based on a very limited dataset. As we add additional training and testing images, the results will change. 

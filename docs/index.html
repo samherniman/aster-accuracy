@@ -92,10 +92,6 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link active" href="./index.html" aria-current="page"> 
 <span class="menu-text">Home</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
-<span class="menu-text">About</span></a>
-  </li>  
 </ul>
           </div> <!-- /navcollapse -->
           <div class="quarto-navbar-tools">
@@ -112,7 +108,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#accuracy" id="toc-accuracy" class="nav-link active" data-scroll-target="#accuracy">Accuracy</a></li>
+  <li><a href="#aster-computer-vision-model" id="toc-aster-computer-vision-model" class="nav-link active" data-scroll-target="#aster-computer-vision-model">Aster Computer vision model</a></li>
+  <li><a href="#accuracy" id="toc-accuracy" class="nav-link" data-scroll-target="#accuracy">Accuracy</a>
+  <ul class="collapse">
+  <li><a href="#please-note" id="toc-please-note" class="nav-link" data-scroll-target="#please-note">Please note</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -138,28 +138,58 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="aster-computer-vision-model" class="level1">
+<h1>Aster Computer vision model</h1>
+<p>Throughout the ASTER project, we will be training computer vision models that run on mobile devices to assist beekeepers in taking care of their colonies. The first model in our list of features we will be providing in this app will be the ability to count the number of bees on each frame of a colony and produce an accurate estimate of the number of individuals.<br>
+We are committed to being transparent around the accuracy and performance of our models throughout this process. This page will display these performance metrics for every iteration of these models. Additionally, we will provide an open verification dataset so that other’s can independently check our results and benchmark them against any future models.</p>
+<p>Below, is an example image from the verification dataset and a prediction of detected individuals. Brighter locations signify higher predicted confidence.</p>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="data/images/Aarhus.11-04-2025(11)_crop.png" class="img-fluid figure-img"></p>
+<figcaption>Actual count: 888</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="data/predictions/Aarhus.11-04-2025(11)_crop_829.webp" class="img-fluid figure-img"></p>
+<figcaption>Detected count: 829</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
 <section id="accuracy" class="level1">
 <h1>Accuracy</h1>
+<p>The following are performance metrics for the current Aster bee counting model. As we add features and improve the model, we will continue to update this page.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
-<div id="ebbnvpmoec" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ebbnvpmoec table {
+<div id="qqhpgrijcm" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#qqhpgrijcm table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ebbnvpmoec thead, #ebbnvpmoec tbody, #ebbnvpmoec tfoot, #ebbnvpmoec tr, #ebbnvpmoec td, #ebbnvpmoec th {
+#qqhpgrijcm thead, #qqhpgrijcm tbody, #qqhpgrijcm tfoot, #qqhpgrijcm tr, #qqhpgrijcm td, #qqhpgrijcm th {
   border-style: none;
 }
 
-#ebbnvpmoec p {
+#qqhpgrijcm p {
   margin: 0;
   padding: 0;
 }
 
-#ebbnvpmoec .gt_table {
+#qqhpgrijcm .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -185,12 +215,12 @@ ul.task-list li input[type="checkbox"] {
   border-left-color: #D3D3D3;
 }
 
-#ebbnvpmoec .gt_caption {
+#qqhpgrijcm .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ebbnvpmoec .gt_title {
+#qqhpgrijcm .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -202,7 +232,7 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-width: 0;
 }
 
-#ebbnvpmoec .gt_subtitle {
+#qqhpgrijcm .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -214,7 +244,7 @@ ul.task-list li input[type="checkbox"] {
   border-top-width: 0;
 }
 
-#ebbnvpmoec .gt_heading {
+#qqhpgrijcm .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -226,13 +256,13 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#ebbnvpmoec .gt_bottom_border {
+#qqhpgrijcm .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ebbnvpmoec .gt_col_headings {
+#qqhpgrijcm .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -247,7 +277,7 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#ebbnvpmoec .gt_col_heading {
+#qqhpgrijcm .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -267,7 +297,7 @@ ul.task-list li input[type="checkbox"] {
   overflow-x: hidden;
 }
 
-#ebbnvpmoec .gt_column_spanner_outer {
+#qqhpgrijcm .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -279,15 +309,15 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 4px;
 }
 
-#ebbnvpmoec .gt_column_spanner_outer:first-child {
+#qqhpgrijcm .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ebbnvpmoec .gt_column_spanner_outer:last-child {
+#qqhpgrijcm .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ebbnvpmoec .gt_column_spanner {
+#qqhpgrijcm .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -299,11 +329,11 @@ ul.task-list li input[type="checkbox"] {
   width: 100%;
 }
 
-#ebbnvpmoec .gt_spanner_row {
+#qqhpgrijcm .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ebbnvpmoec .gt_group_heading {
+#qqhpgrijcm .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -329,7 +359,7 @@ ul.task-list li input[type="checkbox"] {
   text-align: left;
 }
 
-#ebbnvpmoec .gt_empty_group_heading {
+#qqhpgrijcm .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -344,15 +374,15 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 
-#ebbnvpmoec .gt_from_md > :first-child {
+#qqhpgrijcm .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ebbnvpmoec .gt_from_md > :last-child {
+#qqhpgrijcm .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ebbnvpmoec .gt_row {
+#qqhpgrijcm .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -371,7 +401,7 @@ ul.task-list li input[type="checkbox"] {
   overflow-x: hidden;
 }
 
-#ebbnvpmoec .gt_stub {
+#qqhpgrijcm .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -384,7 +414,7 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#ebbnvpmoec .gt_stub_row_group {
+#qqhpgrijcm .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -398,15 +428,15 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: top;
 }
 
-#ebbnvpmoec .gt_row_group_first td {
+#qqhpgrijcm .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ebbnvpmoec .gt_row_group_first th {
+#qqhpgrijcm .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ebbnvpmoec .gt_summary_row {
+#qqhpgrijcm .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -416,16 +446,16 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#ebbnvpmoec .gt_first_summary_row {
+#qqhpgrijcm .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ebbnvpmoec .gt_first_summary_row.thick {
+#qqhpgrijcm .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ebbnvpmoec .gt_last_summary_row {
+#qqhpgrijcm .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -435,7 +465,7 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-color: #D3D3D3;
 }
 
-#ebbnvpmoec .gt_grand_summary_row {
+#qqhpgrijcm .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -445,7 +475,7 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#ebbnvpmoec .gt_first_grand_summary_row {
+#qqhpgrijcm .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -455,7 +485,7 @@ ul.task-list li input[type="checkbox"] {
   border-top-color: #D3D3D3;
 }
 
-#ebbnvpmoec .gt_last_grand_summary_row_top {
+#qqhpgrijcm .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -465,11 +495,11 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-color: #D3D3D3;
 }
 
-#ebbnvpmoec .gt_striped {
+#qqhpgrijcm .gt_striped {
   background-color: #FFFFFF;
 }
 
-#ebbnvpmoec .gt_table_body {
+#qqhpgrijcm .gt_table_body {
   border-top-style: none;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -478,7 +508,7 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-color: #D3D3D3;
 }
 
-#ebbnvpmoec .gt_footnotes {
+#qqhpgrijcm .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -492,7 +522,7 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#ebbnvpmoec .gt_footnote {
+#qqhpgrijcm .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -501,7 +531,7 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#ebbnvpmoec .gt_sourcenotes {
+#qqhpgrijcm .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -515,7 +545,7 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#ebbnvpmoec .gt_sourcenote {
+#qqhpgrijcm .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -523,72 +553,72 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#ebbnvpmoec .gt_left {
+#qqhpgrijcm .gt_left {
   text-align: left;
 }
 
-#ebbnvpmoec .gt_center {
+#qqhpgrijcm .gt_center {
   text-align: center;
 }
 
-#ebbnvpmoec .gt_right {
+#qqhpgrijcm .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ebbnvpmoec .gt_font_normal {
+#qqhpgrijcm .gt_font_normal {
   font-weight: normal;
 }
 
-#ebbnvpmoec .gt_font_bold {
+#qqhpgrijcm .gt_font_bold {
   font-weight: bold;
 }
 
-#ebbnvpmoec .gt_font_italic {
+#qqhpgrijcm .gt_font_italic {
   font-style: italic;
 }
 
-#ebbnvpmoec .gt_super {
+#qqhpgrijcm .gt_super {
   font-size: 65%;
 }
 
-#ebbnvpmoec .gt_footnote_marks {
+#qqhpgrijcm .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ebbnvpmoec .gt_asterisk {
+#qqhpgrijcm .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ebbnvpmoec .gt_indent_1 {
+#qqhpgrijcm .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ebbnvpmoec .gt_indent_2 {
+#qqhpgrijcm .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ebbnvpmoec .gt_indent_3 {
+#qqhpgrijcm .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ebbnvpmoec .gt_indent_4 {
+#qqhpgrijcm .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ebbnvpmoec .gt_indent_5 {
+#qqhpgrijcm .gt_indent_5 {
   text-indent: 25px;
 }
 
-#ebbnvpmoec .katex-display {
+#qqhpgrijcm .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#ebbnvpmoec div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#qqhpgrijcm div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -623,6 +653,10 @@ ul.task-list li input[type="checkbox"] {
 <td class="gt_row gt_left" headers="Metric">Root mean squared error</td>
 <td class="gt_row gt_right" headers="Estimate">62.47</td>
 </tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Metric">Relative Root mean squared error (%)</td>
+<td class="gt_row gt_right" headers="Estimate">8.85</td>
+</tr>
 </tbody>
 </table>
 
@@ -630,8 +664,12 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
+<section id="please-note" class="level2">
+<h2 class="anchored" data-anchor-id="please-note">Please note</h2>
+<p>We would like to stress that these results are very preliminary and are based on a very limited dataset. As we add additional training and testing images, the results will change.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
