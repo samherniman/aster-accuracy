@@ -1,0 +1,13 @@
+---
+title: ""
+---
+
+# Flow diagram of User Experience
+
+
+::: {layout-ncol=1}
+
+![](docs/data/supplementary/uxflow.png)
+
+:::
+
