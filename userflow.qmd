@@ -7,7 +7,7 @@ title: ""
 
 ::: {layout-ncol=1}
 
-![](docs/data/supplementary/uxflow.png)
+![](data/supplementary/uxflow.png)
 
 :::
 
